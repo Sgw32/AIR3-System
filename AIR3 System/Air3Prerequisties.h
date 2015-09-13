@@ -1,0 +1,1 @@
+#define AIR3EXPORT __declspec(dllimport)
