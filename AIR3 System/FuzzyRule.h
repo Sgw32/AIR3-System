@@ -12,11 +12,22 @@
 #ifndef FUZZYRULE_H
 #define FUZZYRULE_H
 
+#ifdef RUN3
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllimport )
+#endif
+#endif
+
+#ifndef FUZZYLIB_DLL
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllexport )
+#endif
+#endif
 // IMPORTANDO AS BIBLIOTECAS NECESSÁRIAS
 #include "FuzzyRuleAntecedent.h"
 #include "FuzzyRuleConsequent.h"
 
-class FuzzyRule {
+class FUZZYLIB_DLL FuzzyRule {
 	public:
 		// CONSTRUTORES
 		FuzzyRule();

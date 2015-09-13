@@ -12,6 +12,18 @@
 #ifndef FUZZYOUTPUT_H
 #define FUZZYOUTPUT_H
 
+#ifdef RUN3
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllimport )
+#endif
+#endif
+
+#ifndef FUZZYLIB_DLL
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllexport )
+#endif
+#endif
+
 // IMPORTANDO AS BIBLIOTECAS NECESSÁRIAS
 #include "FuzzyIO.h"
 #include "FuzzyComposition.h"
@@ -24,7 +36,7 @@ struct line{
 	float yEnd;
 };
 
-class FuzzyOutput : public FuzzyIO {
+class FUZZYLIB_DLL FuzzyOutput : public FuzzyIO {
 	public:
 		// CONSTRUTORES
 		FuzzyOutput();

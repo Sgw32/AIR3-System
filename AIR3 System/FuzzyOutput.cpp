@@ -12,19 +12,19 @@
 #include "FuzzyOutput.h"
 
 // CONSTRUTORES
-FuzzyOutput::FuzzyOutput() : FuzzyIO(){
+FUZZYLIB_DLL FuzzyOutput::FuzzyOutput() : FuzzyIO(){
 }
 
-FuzzyOutput::FuzzyOutput(int index) : FuzzyIO(index){
+FUZZYLIB_DLL FuzzyOutput::FuzzyOutput(int index) : FuzzyIO(index){
 }
 
 // DESTRUTOR
-FuzzyOutput::~FuzzyOutput(){
+FUZZYLIB_DLL FuzzyOutput::~FuzzyOutput(){
 	this->fuzzyComposition.empty();
 }
 
 // MÉTODOS PÚBLICOS
-bool FuzzyOutput::truncate(){
+FUZZYLIB_DLL bool FuzzyOutput::truncate(){
 	// esvaziando a composição
 	this->fuzzyComposition.empty();
 
@@ -109,12 +109,12 @@ bool FuzzyOutput::truncate(){
 	return true;
 }
 
-float FuzzyOutput::getCrispOutput(){
+FUZZYLIB_DLL float FuzzyOutput::getCrispOutput(){
 	return this->fuzzyComposition.avaliate();
 }
 
 // Um simples Bubble Sort
-bool FuzzyOutput::order(){
+FUZZYLIB_DLL bool FuzzyOutput::order(){
 	fuzzySetArray *aux1;
 	fuzzySetArray *aux2;
 
@@ -137,7 +137,7 @@ bool FuzzyOutput::order(){
 }
 
 // MÉTODOS PRIVADOS
-bool FuzzyOutput::swap(fuzzySetArray* fuzzySetA, fuzzySetArray* fuzzySetB){
+FUZZYLIB_DLL bool FuzzyOutput::swap(fuzzySetArray* fuzzySetA, fuzzySetArray* fuzzySetB){
 	FuzzySet* aux;
 	
 	aux = fuzzySetA->fuzzySet;
@@ -147,7 +147,7 @@ bool FuzzyOutput::swap(fuzzySetArray* fuzzySetA, fuzzySetArray* fuzzySetB){
 	return true;
 }
 
-bool FuzzyOutput::rebuild(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, float* point, float* pertinence){
+FUZZYLIB_DLL bool FuzzyOutput::rebuild(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, float* point, float* pertinence){
 	float denom, numera, numerb;
 	float mua, mub;
 

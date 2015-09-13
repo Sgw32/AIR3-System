@@ -12,7 +12,19 @@
 #ifndef FUZZYSET_H
 #define FUZZYSET_H
 
-class FuzzySet {
+#ifdef RUN3
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllimport )
+#endif
+#endif
+
+#ifndef FUZZYLIB_DLL
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllexport )
+#endif
+#endif
+
+class FUZZYLIB_DLL FuzzySet {
 	public:
 		// CONSTRUTORES
 		FuzzySet();

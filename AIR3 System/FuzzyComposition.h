@@ -12,6 +12,19 @@
 #ifndef FUZZYCOMPOSITION_H
 #define FUZZYCOMPOSITION_H
 
+
+#ifdef RUN3
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllimport )
+#endif
+#endif
+
+#ifndef FUZZYLIB_DLL
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllexport )
+#endif
+#endif
+
 // IMPORTANDO AS BIBLIOTECAS NECESSÁRIAS
 #include <stdlib.h>
 
@@ -26,7 +39,7 @@ struct pointsArray{
 	pointsArray* next;
 };
 
-class FuzzyComposition{
+class FUZZYLIB_DLL FuzzyComposition{
 	public:
 		// CONSTRUTORES
 		FuzzyComposition();

@@ -13,11 +13,15 @@
 #define FUZZY_H
 
 #ifdef RUN3
+#ifndef FUZZYLIB_DLL
 #define FUZZYLIB_DLL __declspec( dllimport )
+#endif
 #endif
 
 #ifndef FUZZYLIB_DLL
+#ifndef FUZZYLIB_DLL
 #define FUZZYLIB_DLL __declspec( dllexport )
+#endif
 #endif
 // IMPORTANDO AS BIBLIOTECAS NECESSÁRIAS
 //#include <inttypes.h>
@@ -43,7 +47,7 @@ struct fuzzyRuleArray{
 	fuzzyRuleArray* next;
 };
 
-class Fuzzy {
+class FUZZYLIB_DLL Fuzzy {
 	public:
 		// CONSTRUTORES
 		Fuzzy();

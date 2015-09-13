@@ -12,18 +12,18 @@
 #include "FuzzyRuleConsequent.h"
 
 // CONSTRUTORES
-FuzzyRuleConsequent::FuzzyRuleConsequent(){
+FUZZYLIB_DLL FuzzyRuleConsequent::FuzzyRuleConsequent(){
 	this->fuzzySetOutputs = NULL;
 	this->fuzzySetOutputsCursor = NULL;
 }
 
 // DESTRUTOR
-FuzzyRuleConsequent::~FuzzyRuleConsequent(){
+FUZZYLIB_DLL FuzzyRuleConsequent::~FuzzyRuleConsequent(){
 	this->cleanFuzzySets(this->fuzzySetOutputs);
 }
 
 // MÉTODOS PÚBLICOS
-bool FuzzyRuleConsequent::addOutput(FuzzySet* fuzzySet){
+FUZZYLIB_DLL bool FuzzyRuleConsequent::addOutput(FuzzySet* fuzzySet){
 	fuzzySetOutputArray *aux;
 	// Alocando espaço na memória
 	if((aux = (fuzzySetOutputArray *) malloc(sizeof(fuzzySetOutputArray))) == NULL){
@@ -42,7 +42,7 @@ bool FuzzyRuleConsequent::addOutput(FuzzySet* fuzzySet){
 	return true;
 }
 
-bool FuzzyRuleConsequent::evaluate(float power){
+FUZZYLIB_DLL bool FuzzyRuleConsequent::evaluate(float power){
 	fuzzySetOutputArray *aux;
 	aux = this->fuzzySetOutputs;
 	while(aux != NULL){
@@ -53,7 +53,7 @@ bool FuzzyRuleConsequent::evaluate(float power){
 }
 
 // MÉTODOS PRIVADOS
-void FuzzyRuleConsequent::cleanFuzzySets(fuzzySetOutputArray* aux){
+FUZZYLIB_DLL void FuzzyRuleConsequent::cleanFuzzySets(fuzzySetOutputArray* aux){
 	if(aux != NULL){
 		// Esvaziando a memória alocada
 		this->cleanFuzzySets(aux->next);

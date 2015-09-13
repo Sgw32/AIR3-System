@@ -16,13 +16,25 @@
 #include <stdlib.h>
 #include "FuzzySet.h"
 
+#ifdef RUN3
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllimport )
+#endif
+#endif
+
+#ifndef FUZZYLIB_DLL
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllexport )
+#endif
+#endif
+
 // Estrutura de uma lista de FuzzySet
 struct fuzzySetOutputArray{
 	FuzzySet* fuzzySet;
 	fuzzySetOutputArray* next;
 };
 
-class FuzzyRuleConsequent {
+class FUZZYLIB_DLL FuzzyRuleConsequent {
 	public:
 		// CONSTRUTORES
 		FuzzyRuleConsequent();

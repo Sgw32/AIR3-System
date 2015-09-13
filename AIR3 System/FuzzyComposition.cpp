@@ -13,17 +13,17 @@
 #include <math.h>
 
 // CONSTRUTORES
-FuzzyComposition::FuzzyComposition(){
+FUZZYLIB_DLL FuzzyComposition::FuzzyComposition(){
 	this->pointsCursor 	= NULL;
 	this->points 		= NULL;
 }
 
 // DESTRUTOR
-FuzzyComposition::~FuzzyComposition(){
+FUZZYLIB_DLL FuzzyComposition::~FuzzyComposition(){
 	this->cleanPoints(this->points);
 }
 
-bool FuzzyComposition::addPoint(float point, float pertinence){
+FUZZYLIB_DLL bool FuzzyComposition::addPoint(float point, float pertinence){
 	pointsArray* aux;
 	// Alocando espaço na memória
 	if((aux = (pointsArray* ) malloc(sizeof(pointsArray))) == NULL){
@@ -45,7 +45,7 @@ bool FuzzyComposition::addPoint(float point, float pertinence){
 	return true;
 }
 
-bool FuzzyComposition::checkPoint(float point, float pertinence){
+FUZZYLIB_DLL bool FuzzyComposition::checkPoint(float point, float pertinence){
 	pointsArray* aux;
 	aux = this->pointsCursor;
 	while(aux != NULL){
@@ -57,7 +57,7 @@ bool FuzzyComposition::checkPoint(float point, float pertinence){
 	return false;
 }
 
-bool FuzzyComposition::build(){
+FUZZYLIB_DLL bool FuzzyComposition::build(){
 	pointsArray* aux;
 
 	aux = this->points;
@@ -89,7 +89,7 @@ bool FuzzyComposition::build(){
 	return true;
 }
 
-float FuzzyComposition::avaliate(){
+FUZZYLIB_DLL float FuzzyComposition::avaliate(){
 	pointsArray* aux;
 	float numerator 	= 0.0;
 	float denominator 	= 0.0;
@@ -139,7 +139,7 @@ float FuzzyComposition::avaliate(){
 	}
 }
 
-bool FuzzyComposition::empty(){
+FUZZYLIB_DLL bool FuzzyComposition::empty(){
 	// limpando a memória
 	this->cleanPoints(this->points);
 	// resetando os ponteiros
@@ -149,7 +149,7 @@ bool FuzzyComposition::empty(){
 }
 
 // MÉTODOS PRIVADOS
-void FuzzyComposition::cleanPoints(pointsArray* aux){
+FUZZYLIB_DLL void FuzzyComposition::cleanPoints(pointsArray* aux){
 	if(aux != NULL){
 		// Esvaziando a memória alocada
 		this->cleanPoints(aux->next);
@@ -157,7 +157,7 @@ void FuzzyComposition::cleanPoints(pointsArray* aux){
 	}
 }
 
-bool FuzzyComposition::rebuild(pointsArray* aSegmentBegin, pointsArray* aSegmentEnd, pointsArray* bSegmentBegin, pointsArray* bSegmentEnd){
+FUZZYLIB_DLL bool FuzzyComposition::rebuild(pointsArray* aSegmentBegin, pointsArray* aSegmentEnd, pointsArray* bSegmentBegin, pointsArray* bSegmentEnd){
 	float x1 = aSegmentBegin->point;
 	float y1 = aSegmentBegin->pertinence;
 	float x2 = aSegmentEnd->point;
@@ -239,7 +239,7 @@ bool FuzzyComposition::rebuild(pointsArray* aSegmentBegin, pointsArray* aSegment
 	}
 }
 
-bool FuzzyComposition::rmvPoint(pointsArray* point){
+FUZZYLIB_DLL bool FuzzyComposition::rmvPoint(pointsArray* point){
 	if(point != NULL){
 		free(point);
 	}

@@ -12,10 +12,10 @@
 #include "FuzzyIO.h"
 
 // CONSTRUTORES
-FuzzyIO::FuzzyIO(){
+FUZZYLIB_DLL FuzzyIO::FuzzyIO(){
 }
 
-FuzzyIO::FuzzyIO(int index){
+FUZZYLIB_DLL FuzzyIO::FuzzyIO(int index){
 	this->index = index;
 	// Iniciando os ponteiros como nulo
 	this->fuzzySets			= NULL;
@@ -23,24 +23,24 @@ FuzzyIO::FuzzyIO(int index){
 }
 
 // DESTRUTOR
-FuzzyIO::~FuzzyIO(){
+FUZZYLIB_DLL FuzzyIO::~FuzzyIO(){
 	this->cleanFuzzySets(this->fuzzySets);
 }
 
 // MÉTODOS PÚBLICOS
-int FuzzyIO::getIndex(){
+FUZZYLIB_DLL int FuzzyIO::getIndex(){
 	return this->index;
 }
 
-void FuzzyIO::setCrispInput(float crispInput){
+FUZZYLIB_DLL void FuzzyIO::setCrispInput(float crispInput){
 	this->crispInput = crispInput;
 }
 
-float FuzzyIO::getCrispInput(){
+FUZZYLIB_DLL float FuzzyIO::getCrispInput(){
 	return this->crispInput;
 }
 
-bool FuzzyIO::addFuzzySet(FuzzySet* fuzzySet){
+FUZZYLIB_DLL bool FuzzyIO::addFuzzySet(FuzzySet* fuzzySet){
 	fuzzySetArray *aux;
 	// Alocando espaço na memória
 	if((aux = (fuzzySetArray *) malloc(sizeof(fuzzySetArray))) == NULL){
@@ -59,7 +59,7 @@ bool FuzzyIO::addFuzzySet(FuzzySet* fuzzySet){
 	return true;
 }
 
-void FuzzyIO::resetFuzzySets(){
+FUZZYLIB_DLL void FuzzyIO::resetFuzzySets(){
 	fuzzySetArray* fuzzySetsAux;
     fuzzySetsAux = this->fuzzySets;
     // Calculando as pertinências de totos os FuzzyInputs
@@ -70,7 +70,7 @@ void FuzzyIO::resetFuzzySets(){
 }
 
 // MÉTODOS PROTEGIDOS
-void FuzzyIO::cleanFuzzySets(fuzzySetArray *aux){
+FUZZYLIB_DLL void FuzzyIO::cleanFuzzySets(fuzzySetArray *aux){
 	if(aux != NULL){
 		// Esvaziando a memória alocada
 		this->cleanFuzzySets(aux->next);

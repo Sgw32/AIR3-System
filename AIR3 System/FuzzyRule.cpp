@@ -11,21 +11,21 @@
  */
 #include "FuzzyRule.h"
 
-FuzzyRule::FuzzyRule(){
+FUZZYLIB_DLL FuzzyRule::FuzzyRule(){
 }
 
-FuzzyRule::FuzzyRule(int index, FuzzyRuleAntecedent* fuzzyRuleAntecedent, FuzzyRuleConsequent* fuzzyRuleConsequent){
+FUZZYLIB_DLL FuzzyRule::FuzzyRule(int index, FuzzyRuleAntecedent* fuzzyRuleAntecedent, FuzzyRuleConsequent* fuzzyRuleConsequent){
 	this->index = index;
 	this->fuzzyRuleAntecedent = fuzzyRuleAntecedent;
 	this->fuzzyRuleConsequent = fuzzyRuleConsequent;
 	this->fired = false;
 }
 
-int FuzzyRule::getIndex(){
+FUZZYLIB_DLL int FuzzyRule::getIndex(){
 	return this->index;
 }
 
-bool FuzzyRule::evaluateExpression(){
+FUZZYLIB_DLL bool FuzzyRule::evaluateExpression(){
 	if (this->fuzzyRuleAntecedent != NULL){
 		float powerOfAntecedent = this->fuzzyRuleAntecedent->evaluate();
 
@@ -36,6 +36,6 @@ bool FuzzyRule::evaluateExpression(){
 	return this->fired;
 }
 
-bool FuzzyRule::isFired(){
+FUZZYLIB_DLL bool FuzzyRule::isFired(){
 	return this->fired;
 }

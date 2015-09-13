@@ -11,10 +11,10 @@
  */
 #include "FuzzySet.h"
 
-FuzzySet::FuzzySet(){
+FUZZYLIB_DLL FuzzySet::FuzzySet(){
 }
 
-FuzzySet::FuzzySet(float a, float b, float c, float d){
+FUZZYLIB_DLL FuzzySet::FuzzySet(float a, float b, float c, float d){
 	this->a = a;
 	this->b = b;
 	this->c = c;
@@ -22,23 +22,23 @@ FuzzySet::FuzzySet(float a, float b, float c, float d){
 	this->pertinence = 0.0;
 }
 
-float FuzzySet::getPointA(){
+FUZZYLIB_DLL float FuzzySet::getPointA(){
 	return this->a;
 }
 
-float FuzzySet::getPointB(){
+FUZZYLIB_DLL float FuzzySet::getPointB(){
 	return this->b;
 }
 
-float FuzzySet::getPointC(){
+FUZZYLIB_DLL float FuzzySet::getPointC(){
 	return this->c;
 }
 
-float FuzzySet::getPointD(){
+FUZZYLIB_DLL float FuzzySet::getPointD(){
 	return this->d;
 }
 
-bool FuzzySet::calculatePertinence(float crispValue){
+FUZZYLIB_DLL bool FuzzySet::calculatePertinence(float crispValue){
 	float slope;
 
 	if (crispValue < this->a){
@@ -65,16 +65,16 @@ bool FuzzySet::calculatePertinence(float crispValue){
 	return true;
 }
 
-void FuzzySet::setPertinence(float pertinence){
+FUZZYLIB_DLL void FuzzySet::setPertinence(float pertinence){
 	if(this->pertinence < pertinence){
 		this->pertinence = pertinence;
 	}
 }
 
-float FuzzySet::getPertinence(){
+FUZZYLIB_DLL float FuzzySet::getPertinence(){
 	return this->pertinence;
 }
 
-void FuzzySet::reset(){
+FUZZYLIB_DLL void FuzzySet::reset(){
 	this->pertinence = 0.0;
 }

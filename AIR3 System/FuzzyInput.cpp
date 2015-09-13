@@ -12,18 +12,18 @@
 #include "FuzzyInput.h"
 
 // CONSTRUTORES
-FuzzyInput::FuzzyInput() : FuzzyIO(){
+FUZZYLIB_DLL FuzzyInput::FuzzyInput() : FuzzyIO(){
 }
 
-FuzzyInput::FuzzyInput(int index) : FuzzyIO(index){
+FUZZYLIB_DLL FuzzyInput::FuzzyInput(int index) : FuzzyIO(index){
 }
 
 // DESTRUTOR
-FuzzyInput::~FuzzyInput(){
+FUZZYLIB_DLL FuzzyInput::~FuzzyInput(){
 }
 
 // MÉTODOS PÚBLICOS
-bool FuzzyInput::calculateFuzzySetPertinences(){
+FUZZYLIB_DLL bool FuzzyInput::calculateFuzzySetPertinences(){
 	fuzzySetArray *aux;
 	aux = this->fuzzySets;
 

@@ -12,6 +12,18 @@
 #ifndef FUZZYIO_H
 #define FUZZYIO_H
 
+#ifdef RUN3
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllimport )
+#endif
+#endif
+
+#ifndef FUZZYLIB_DLL
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllexport )
+#endif
+#endif
+
 // IMPORTANDO AS BIBLIOTECAS NECESSÁRIAS
 #include <stdlib.h>
 #include "FuzzySet.h"
@@ -22,7 +34,7 @@ struct fuzzySetArray{
 	fuzzySetArray* next;
 };
 
-class FuzzyIO {
+class FUZZYLIB_DLL FuzzyIO {
 	public:
 		// CONSTRUTORES
 		FuzzyIO();

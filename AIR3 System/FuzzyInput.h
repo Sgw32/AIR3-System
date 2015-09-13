@@ -12,10 +12,22 @@
 #ifndef FUZZYINPUT_H
 #define FUZZYINPUT_H
 
+#ifdef RUN3
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllimport )
+#endif
+#endif
+
+#ifndef FUZZYLIB_DLL
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllexport )
+#endif
+#endif
+
 // IMPORTANDO AS BIBLIOTECAS NECESSÁRIAS
 #include "FuzzyIO.h"
 
-class FuzzyInput : public FuzzyIO {
+class FUZZYLIB_DLL FuzzyInput : public FuzzyIO {
 	public:
 		// CONSTRUTORES
         FuzzyInput();

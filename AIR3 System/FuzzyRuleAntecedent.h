@@ -12,6 +12,18 @@
 #ifndef FUZZYRULEANTECEDENT_H
 #define FUZZYRULEANTECEDENT_H
 
+#ifdef RUN3
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllimport )
+#endif
+#endif
+
+#ifndef FUZZYLIB_DLL
+#ifndef FUZZYLIB_DLL
+#define FUZZYLIB_DLL __declspec( dllexport )
+#endif
+#endif
+
 // IMPORTANDO AS BIBLIOTECAS NECESSÁRIAS
 #include <stdlib.h>
 #include "FuzzySet.h"
@@ -24,7 +36,7 @@
 #define MODE_FS_FRA 3
 #define MODE_FRA_FRA 4
 
-class FuzzyRuleAntecedent {
+class FUZZYLIB_DLL FuzzyRuleAntecedent {
 	public:
 		// CONSTRUTORES
 		FuzzyRuleAntecedent();

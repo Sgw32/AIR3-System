@@ -12,7 +12,7 @@
 #include "FuzzyRuleAntecedent.h"
 
 // CONSTRUTORES
-FuzzyRuleAntecedent::FuzzyRuleAntecedent(){
+FUZZYLIB_DLL FuzzyRuleAntecedent::FuzzyRuleAntecedent(){
 	this->op = 0;
 	this->mode = 0;
 	this->fuzzySet1 = NULL;
@@ -22,7 +22,7 @@ FuzzyRuleAntecedent::FuzzyRuleAntecedent(){
 }
 
 // MÉTODOS PÚBLICOS
-bool FuzzyRuleAntecedent::joinSingle(FuzzySet* fuzzySet){
+FUZZYLIB_DLL bool FuzzyRuleAntecedent::joinSingle(FuzzySet* fuzzySet){
 	if(fuzzySet){
 		this->mode = MODE_FS;
 		this->fuzzySet1 = fuzzySet;
@@ -31,7 +31,7 @@ bool FuzzyRuleAntecedent::joinSingle(FuzzySet* fuzzySet){
 	return false;
 }
 
-bool FuzzyRuleAntecedent::joinWithAND(FuzzySet* fuzzySet1, FuzzySet* fuzzySet2){
+FUZZYLIB_DLL bool FuzzyRuleAntecedent::joinWithAND(FuzzySet* fuzzySet1, FuzzySet* fuzzySet2){
 	if(fuzzySet1 != NULL && fuzzySet2 != NULL){
 		this->op = OP_AND;
 		this->mode = MODE_FS_FS;
@@ -42,7 +42,7 @@ bool FuzzyRuleAntecedent::joinWithAND(FuzzySet* fuzzySet1, FuzzySet* fuzzySet2){
 	return false;
 }
 
-bool FuzzyRuleAntecedent::joinWithOR(FuzzySet* fuzzySet1, FuzzySet* fuzzySet2){
+FUZZYLIB_DLL bool FuzzyRuleAntecedent::joinWithOR(FuzzySet* fuzzySet1, FuzzySet* fuzzySet2){
 	if(fuzzySet1 != NULL && fuzzySet2 != NULL){
 		this->op = OP_OR;
 		this->mode = MODE_FS_FS;
@@ -64,7 +64,7 @@ bool FuzzyRuleAntecedent::joinWithAND(FuzzySet* fuzzySet, FuzzyRuleAntecedent* f
 	return false;
 }
 
-bool FuzzyRuleAntecedent::joinWithAND(FuzzyRuleAntecedent* fuzzyRuleAntecedent, FuzzySet* fuzzySet){
+FUZZYLIB_DLL bool FuzzyRuleAntecedent::joinWithAND(FuzzyRuleAntecedent* fuzzyRuleAntecedent, FuzzySet* fuzzySet){
 	if(fuzzySet != NULL && fuzzyRuleAntecedent != NULL){
 		this->op = OP_AND;
 		this->mode = MODE_FS_FRA;
@@ -75,7 +75,7 @@ bool FuzzyRuleAntecedent::joinWithAND(FuzzyRuleAntecedent* fuzzyRuleAntecedent, 
 	return false;
 }
 
-bool FuzzyRuleAntecedent::joinWithOR(FuzzySet* fuzzySet, FuzzyRuleAntecedent* fuzzyRuleAntecedent){
+FUZZYLIB_DLL bool FuzzyRuleAntecedent::joinWithOR(FuzzySet* fuzzySet, FuzzyRuleAntecedent* fuzzyRuleAntecedent){
 	if(fuzzySet != NULL && fuzzyRuleAntecedent != NULL){
 		this->op = OP_OR;
 		this->mode = MODE_FS_FRA;
@@ -86,7 +86,7 @@ bool FuzzyRuleAntecedent::joinWithOR(FuzzySet* fuzzySet, FuzzyRuleAntecedent* fu
 	return false;
 }
 
-bool FuzzyRuleAntecedent::joinWithOR(FuzzyRuleAntecedent* fuzzyRuleAntecedent, FuzzySet* fuzzySet){
+FUZZYLIB_DLL bool FuzzyRuleAntecedent::joinWithOR(FuzzyRuleAntecedent* fuzzyRuleAntecedent, FuzzySet* fuzzySet){
 	if(fuzzySet != NULL && fuzzyRuleAntecedent != NULL){
 		this->op = OP_OR;
 		this->mode = MODE_FS_FRA;
@@ -97,7 +97,7 @@ bool FuzzyRuleAntecedent::joinWithOR(FuzzyRuleAntecedent* fuzzyRuleAntecedent, F
 	return false;
 }
 
-bool FuzzyRuleAntecedent::joinWithAND(FuzzyRuleAntecedent* fuzzyRuleAntecedent1, FuzzyRuleAntecedent* fuzzyRuleAntecedent2){
+FUZZYLIB_DLL bool FuzzyRuleAntecedent::joinWithAND(FuzzyRuleAntecedent* fuzzyRuleAntecedent1, FuzzyRuleAntecedent* fuzzyRuleAntecedent2){
 	if(fuzzyRuleAntecedent1 != NULL && fuzzyRuleAntecedent2 != NULL){
 		this->op = OP_AND;
 		this->mode = MODE_FRA_FRA;
@@ -108,7 +108,7 @@ bool FuzzyRuleAntecedent::joinWithAND(FuzzyRuleAntecedent* fuzzyRuleAntecedent1,
 	return false;
 }
 
-bool FuzzyRuleAntecedent::joinWithOR(FuzzyRuleAntecedent* fuzzyRuleAntecedent1, FuzzyRuleAntecedent* fuzzyRuleAntecedent2){
+FUZZYLIB_DLL bool FuzzyRuleAntecedent::joinWithOR(FuzzyRuleAntecedent* fuzzyRuleAntecedent1, FuzzyRuleAntecedent* fuzzyRuleAntecedent2){
 	if(fuzzyRuleAntecedent1 != NULL && fuzzyRuleAntecedent2 != NULL){
 		this->op = OP_OR;
 		this->mode = MODE_FRA_FRA;
@@ -119,7 +119,7 @@ bool FuzzyRuleAntecedent::joinWithOR(FuzzyRuleAntecedent* fuzzyRuleAntecedent1, 
 	return false;
 }
 
-float FuzzyRuleAntecedent::evaluate(){
+FUZZYLIB_DLL float FuzzyRuleAntecedent::evaluate(){
 	switch(this->mode){
 		case MODE_FS:
 			return this->fuzzySet1->getPertinence();

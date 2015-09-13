@@ -11,5 +11,61 @@ Build Log
 </h3>
 </pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
 Command Lines
-</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>AIR3 System - up-to-date.</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating temporary file "d:\Program Files\Air3\Git-air3\AIR3 System\Release\RSP000008.rsp" with contents
+[
+/O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_USRDLL" /D "AIR3SYSTEM_EXPORTS" /D "_WINDLL" /D "_MBCS" /Gm /EHsc /MD /GS /Fo"Release/" /Fd"Release/vc70.pdb" /W3 /c /Wp64 /Zi /TP
+".\FuzzySet.cpp"
+]
+Creating command line "cl.exe @"d:\Program Files\Air3\Git-air3\AIR3 System\Release\RSP000008.rsp" /nologo"
+Creating temporary file "d:\Program Files\Air3\Git-air3\AIR3 System\Release\RSP000009.rsp" with contents
+[
+/OUT:"C:/run3v0.72//AIR3System.dll" /INCREMENTAL /NOLOGO /DLL /DEBUG /PDB:"C:/run3v0.72//AIR3 System.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /IMPLIB:"C:/run3v0.72//AIR3System_r.lib" /MACHINE:X86 OgreMain.lib OgreNewt_Main.lib OIS.lib newton.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "\OgreSDK\lib\OgreMain.lib" "\Program Files\OgreNewt\OgreNewt_Main\lib\release\OgreNewt_Main.lib" "\OgreSDK\lib\OIS.lib" "\Program Files\NewtonSDK\sdk\dll\Newton.lib"
+".\Release\npc_bplay.obj"
+".\Release\npc_pdollow_nai.obj"
+".\Release\Element.obj"
+".\Release\ElementGroup.obj"
+".\Release\ElementGroupGenerator.obj"
+".\Release\nodeGenerator.obj"
+".\Release\NodeList.obj"
+".\Release\NPCNode.obj"
+".\Release\AirPathFind.obj"
+".\Release\Fuzzy.obj"
+".\Release\FuzzyComposition.obj"
+".\Release\FuzzyInput.obj"
+".\Release\FuzzyIO.obj"
+".\Release\FuzzyOutput.obj"
+".\Release\FuzzyRule.obj"
+".\Release\FuzzyRuleAntecedent.obj"
+".\Release\FuzzyRuleConsequent.obj"
+".\Release\FuzzySet.obj"
+".\Release\AIR3 System.res"
+]
+Creating command line "link.exe @"d:\Program Files\Air3\Git-air3\AIR3 System\Release\RSP000009.rsp""
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Output Window
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Compiling...
+FuzzySet.cpp
+FuzzySet.cpp(51) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+FuzzySet.cpp(52) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+FuzzySet.cpp(56) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+FuzzySet.cpp(57) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Linking...
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
+   Creating library C:/run3v0.72//AIR3System_r.lib and object C:/run3v0.72//AIR3System_r.exp
+npc_pdollow_nai.obj : warning LNK4217: locally defined symbol ?getPosition@NPCNode@@QAE?AVVector3@Ogre@@XZ (public: class Ogre::Vector3 __thiscall NPCNode::getPosition(void)) imported in function "public: void __thiscall npc_pfollow_nai::processEvent(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?processEvent@npc_pfollow_nai@@QAEXHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)
+AirPathFind.obj : warning LNK4049: locally defined symbol ?getPosition@NPCNode@@QAE?AVVector3@Ogre@@XZ (public: class Ogre::Vector3 __thiscall NPCNode::getPosition(void)) imported
+ElementGroup.obj : warning LNK4217: locally defined symbol ??1AIElement@@QAE@XZ (public: __thiscall AIElement::~AIElement(void)) imported in function "public: void * __thiscall AIElement::`scalar deleting destructor'(unsigned int)" (??_GAIElement@@QAEPAXI@Z)
+ElementGroup.obj : warning LNK4217: locally defined symbol ?sendCommand2@AIElement@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z (public: void __thiscall AIElement::sendCommand2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)) imported in function "public: void __thiscall AIElementGroupSeparate::commandAny(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?commandAny@AIElementGroupSeparate@@QAEXHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+ElementGroup.obj : warning LNK4217: locally defined symbol ?getPosition@AIElement@@QAE?AVVector3@Ogre@@XZ (public: class Ogre::Vector3 __thiscall AIElement::getPosition(void)) imported in function "public: void __thiscall AIElementGroupSeparate::commandAny(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?commandAny@AIElementGroupSeparate@@QAEXHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+ElementGroup.obj : warning LNK4217: locally defined symbol ?sendCommand1@AIElement@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z (public: void __thiscall AIElement::sendCommand1(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)) imported in function "public: void __thiscall AIElementGroupSeparate::commandAny(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?commandAny@AIElementGroupSeparate@@QAEXHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+ElementGroup.obj : warning LNK4217: locally defined symbol ?getVelocity@AIElement@@QAE?AVVector3@Ogre@@XZ (public: class Ogre::Vector3 __thiscall AIElement::getVelocity(void)) imported in function "public: class Ogre::Vector3 __thiscall AIElementGroupSwarm::rule3(class AIElement *)" (?rule3@AIElementGroupSwarm@@QAE?AVVector3@Ogre@@PAVAIElement@@@Z)
+ElementGroup.obj : warning LNK4217: locally defined symbol ?setVelocity@AIElement@@QAEXVVector3@Ogre@@@Z (public: void __thiscall AIElement::setVelocity(class Ogre::Vector3)) imported in function "public: void __thiscall AIElementGroupSwarm::tendToPos(class Ogre::Vector3)" (?tendToPos@AIElementGroupSwarm@@QAEXVVector3@Ogre@@@Z)
+nodeGenerator.obj : warning LNK4217: locally defined symbol ?addNPCNode@NodeList@@QAEXPAVNPCNode@@@Z (public: void __thiscall NodeList::addNPCNode(class NPCNode *)) imported in function "public: class std::vector<class NPCNode *,class std::allocator<class NPCNode *> > __thiscall nodeGenerator::generate_nodes(void)" (?generate_nodes@nodeGenerator@@QAE?AV?$vector@PAVNPCNode@@V?$allocator@PAVNPCNode@@@std@@@std@@XZ)
+nodeGenerator.obj : warning LNK4217: locally defined symbol ??0NPCNode@@QAE@PAVSceneManager@Ogre@@VVector3@2@@Z (public: __thiscall NPCNode::NPCNode(class Ogre::SceneManager *,class Ogre::Vector3)) imported in function "public: class std::vector<class NPCNode *,class std::allocator<class NPCNode *> > __thiscall nodeGenerator::generate_nodes(void)" (?generate_nodes@nodeGenerator@@QAE?AV?$vector@PAVNPCNode@@V?$allocator@PAVNPCNode@@@std@@@std@@XZ)
+NodeList.obj : warning LNK4217: locally defined symbol ??1NPCNode@@QAE@XZ (public: __thiscall NPCNode::~NPCNode(void)) imported in function "public: void * __thiscall NPCNode::`scalar deleting destructor'(unsigned int)" (??_GNPCNode@@QAEPAXI@Z)
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Results
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+Build log was saved at "file://d:\Program Files\Air3\Git-air3\AIR3 System\Release\BuildLog.htm"
+AIR3 System - 0 error(s), 16 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
 </font></table></body></html>
