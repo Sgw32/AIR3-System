@@ -63,7 +63,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="C:/run3v0.72/"
+			OutputDirectory="D:\Program Files\AIR3\GIT-AIR3\AIR3 System\Release\"
 			IntermediateDirectory="Release"
 			ConfigurationType="2"
 			CharacterSet="2">
@@ -213,6 +213,16 @@
 				</File>
 				<File
 					RelativePath=".\FuzzySet.h">
+				</File>
+			</Filter>
+			<Filter
+				Name="Control"
+				Filter="">
+				<File
+					RelativePath=".\PID.cpp">
+				</File>
+				<File
+					RelativePath=".\PID.h">
 				</File>
 			</Filter>
 		</Filter>
